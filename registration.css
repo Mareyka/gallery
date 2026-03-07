@@ -1,0 +1,318 @@
+body {
+  padding: 0px 0px 0 0px;  
+}
+
+/* Контейнер обеих частей */
+.page_split{
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Левая часть – прозрачная */
+.left_side{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Правая часть – тёмно-фиолетовый полупрозрачный фон */
+.right_side_dark{
+  flex: 1;
+  display: flex;              /* используем flex для вертикального центрирования */
+  flex-direction: column;     /* элементы вертикально */
+  justify-content: center;    /* центрируем по вертикали */
+  align-items: center;        /* центрируем по горизонтали */
+  gap: 20px;                  /* общий промежуток между элементами (в том числе между картинкой и кнопками) */
+  background-color: #191425; 
+} 
+
+/* Правая часть – тёмно-фиолетовый полупрозрачный фон */
+.right_side_light{
+  flex: 1;
+  display: flex;              /* используем flex для вертикального центрирования */
+  flex-direction: column;     /* элементы вертикально */
+  justify-content: center;    /* центрируем по вертикали */
+  align-items: center;        /* центрируем по горизонтали */
+  gap: 20px;                  /* общий промежуток между элементами (в том числе между картинкой и кнопками) */
+  background-color: #E3D9D5; 
+} 
+
+/* Вертикальная линия посередине */
+.page_split::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background-color: #5658F6;
+}
+
+/* Текст */
+.left_side p,
+.right_side p{
+  margin: 0;
+  width: 100%;           /* растягиваем на всю половину */
+  max-width: 510px;      /* но не шире 510px */
+  text-align: center;
+  font-size: 36px;
+  line-height: 1.3;
+  background: transparent; /* полностью прозрачный фон текста */
+}
+
+/* Градиент для слов "именно вас" */
+.gradient{
+  background: linear-gradient(90deg, #FF0004, #5658F6); /* фиолетово-бежевый градиент */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.account_icon{
+  background: none;
+  margin-bottom: 50px;
+}
+
+/* верх */
+.login_header{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start; /* прижимает к левому краю */
+  background: transparent;
+  margin-top: 20px;
+}
+
+/* середина */
+.login_inputs{
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: transparent;
+}
+
+/* поля ввода темная тема*/
+.login_input_darktheme{
+  padding: 12px 15px;              
+  border-radius: 15px;              
+  border: 1px solid #4648B6;   /* обычная рамка */    
+  color: #9282B6;              /* обычный текст */              
+  transition: all 0.3s ease;     
+  background: none;  
+  text-align: left;
+}
+
+/* при наведении */
+.login_input_darktheme:hover {
+  border-color: #5658F6;  /* новая рамка */          
+  color: #C3ABF5;         /* новый текст */                
+}
+
+/* placeholder */
+.login_input_darktheme::placeholder{
+  color: #9282B6;
+}
+
+/* placeholder при наведении */
+.login_input_darktheme:hover::placeholder{
+  color: #C3ABF5;
+}
+
+.forget_text{
+  background: transparent; 
+  text-align: center; 
+  cursor: pointer;
+}
+
+/* низ */
+.login_buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 80px;
+  background: transparent;
+}
+
+/* поля ввода светлая тема*/
+.login_input_lighttheme{
+  padding: 12px 15px;              
+  border-radius: 15px;              
+  border: 1px solid #5658F6;   /* обычная рамка */    
+  color: #9282B6;              /* обычный текст */             
+  transition: all 0.3s ease;     
+  background: none;  
+  text-align: left;
+}
+
+/* при наведении */
+.login_input_lighttheme:hover {
+  border-color: #111111;  /* новая рамка */          
+  color: #111111;         /* новый текст */                
+}
+
+/* placeholder */
+.login_input_lighttheme::placeholder{
+  color: #9282B6;
+}
+
+/* placeholder при наведении */
+.login_input_lighttheme:hover::placeholder{
+  color: #111111;
+}
+
+.registration_place{
+  display: flex;              /* используем flex для вертикального центрирования */
+  flex-direction: column;     /* элементы вертикально */
+  justify-content: center;    /* центрируем по вертикали */
+  align-items: center;        /* центрируем по горизонтали */ 
+  gap: 40px;
+}
+
+/* верх */
+.registration_header{
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  margin-top: 50px;
+  width: 590px;
+}
+
+/* середина */
+.registration_inputs{
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* поля ввода темная тема*/
+.registration_input_darktheme{
+  padding: 12px;
+  padding-right: 35px; /* место для картинки */
+  border-radius: 15px;
+  border: 1px solid #4648B6;
+  color: #9282B6;
+  transition: all 0.3s ease;
+  background: url("/photo/arrow_down_darktheme.svg") no-repeat right 10px center;
+  background-size: 20px 20px; /* размер картинки */
+  text-align: left;
+  width: 190px;
+}
+
+/* при наведении */
+.registration_input_darktheme:hover {
+  border-color: #5658F6;  /* новая рамка */          
+  color: #C3ABF5;         /* новый текст */                
+}
+
+/* placeholder */
+.registration_input_darktheme::placeholder{
+  color: #9282B6;
+}
+
+/* placeholder при наведении */
+.registration_input_darktheme:hover::placeholder{
+  color: #C3ABF5;
+}
+
+/* поля ввода светлая тема*/
+.registration_input_lighttheme{
+  padding: 12px;              
+  border-radius: 15px;              
+  border: 1px solid #5658F6;   /* обычная рамка */    
+  color: #9282B6;              /* обычный текст */             
+  transition: all 0.3s ease;     
+  background: url("/photo/arrow_down_lighttheme.svg") no-repeat right 10px center;
+  background-size: 20px 20px; /* размер картинки */
+  text-align: left;
+  width: 190px;
+}
+
+/* при наведении */
+.registration_input_lighttheme:hover {
+  border-color: #111111;  /* новая рамка */          
+  color: #111111;         /* новый текст */                
+}
+
+/* placeholder */
+.registration_input_lighttheme::placeholder{
+  color: #9282B6;
+}
+
+/* placeholder при наведении */
+.registration_input_lighttheme:hover::placeholder{
+  color: #111111;
+}
+
+
+/* wrapper для input с dropdown */
+.dropdown_wrapper {
+  position: relative;
+}
+
+/* список значений темная тема*/
+.dropdown_list_darktheme {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #191425;
+  border: 1px solid #4648B6;
+  border-radius: 10px;
+  display: none;
+  margin-top: 10px;
+}
+
+/* элемент списка */
+.dropdown_list_darktheme div {
+  padding: 10px;
+  color: #9282B6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown_list_darktheme div:hover {
+  background: #C3ABF5;
+  color: #5658F6;
+}
+
+/* список значений светлая тема*/
+.dropdown_list_lighttheme {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #E3D9D5;
+  border: 1px solid #4648B6;
+  border-radius: 10px;
+  display: none;
+  margin-top: 10px;
+}
+
+/* элемент списка */
+.dropdown_list_lighttheme div {
+  padding: 10px;
+  color: #111111;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown_list_lighttheme div:hover {
+  background: #C3ABF5;
+  color: #111111;
+}
+
+.minusgap{
+  margin-bottom: -10px;
+}

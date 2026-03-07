@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/registration.css">
+    <link rel="stylesheet" href="registration_darktheme.css">
+    <title>Document</title>
+</head>
+<body >
+
+<div class="registration_place">
+  <!-- верх -->
+  <div class="registration_header">
+    <a href="getin.html"> 
+        <img src="/photo/arrow_left_light.svg" style="background: transparent;">
+    </a>
+        <p class="name_date_bold" style="background: transparent;">Зарегистрируйтесь в Аукционе</p>
+  </div>
+  <!-- середина -->
+<div class="registration_inputs">
+    <p class="medium minusgap">Мобильный телефон или электронный адрес</p>
+    <input type="text" placeholder="Имя пользователя, номер мобильного телефона, эл. почта" class="login_input_darktheme signature_regular">
+    <p class="medium minusgap">Пароль</p>
+    <input type="password" placeholder="Пароль" class="login_input_darktheme signature_regular">
+    <p class="medium minusgap">Дата рождения</p>
+    <div class="registartion_gap">
+        <div class="dropdown_wrapper">
+            <input placeholder="День" class="registration_input_darktheme signature_regular" readonly>
+            <div class="dropdown_list_darktheme signature_regular" id="days"></div>
+        </div>
+        <div class="dropdown_wrapper">
+            <input placeholder="Месяц" class="registration_input_darktheme signature_regular" readonly>
+            <div class="dropdown_list_darktheme signature_regular" id="months"></div>
+        </div>
+        <div class="dropdown_wrapper">
+            <input placeholder="Год" class="registration_input_darktheme signature_regular" readonly>
+            <div class="dropdown_list_darktheme signature_regular" id="years"></div>
+        </div>
+    </div>
+    <p class="medium minusgap">Имя пользователя</p>
+    <input type="text" placeholder="Имя пользователя" class="login_input_darktheme signature_regular">
+</div>
+  <!-- низ -->
+  <div class="login_buttons">
+    <button class="registration_button_full schedule_top button" onclick="location.href='auction_authorized.html'">
+        Отправить
+    </button>
+      <button class="registration_button_dark button" onclick="location.href='authorization.html'">
+          У меня уже есть аккаунт
+      </button>
+  </div>
+</div>
+
+    <main>
+    </main>
+    <script src="/dropdown_list.js"></script>
+</body>
+</html>
