@@ -1,4 +1,17 @@
-*{
+* {
   background-color: #EFEAD3;
+  color: #111111;
+}
+
+.burger-btn span {
+  background: #111111;
+}
+
+.side-menu {
+  background: #EFEAD3;
+  border-left: 1px solid #9c9c9c;
+}
+
+.side-menu-link {
   color: #111111;
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="dark.css">
+    <link rel="stylesheet" href="light.css">
     <title>Document</title>
 </head>
 
@@ -17,18 +17,18 @@
         <a href="schedule.html" class="header_element">График</a>
         <a href="price.html" class="header_element">Билеты</a>
         <!--BLOCK -->
-        <a href="" class="credits_gradient_dark">
+        <a href="" class="credits_gradient_light">
             <p class="main price_text_background">
                 Увеличить лимит: 100 BYN
             </p>
         </a>
         <div class="auction-wrapper">
             <a href="profile.html">
-                <img class="header_account" src="/photo/account_light.svg">
+                <img class="header_account" src="/photo/account_dark.svg">
             </a>
             <a href="index.html" class="header_element">Выход</a>
-            <a href="/light_theme/profile.html">
-                <img class="header_auction" src="/photo/sun.svg">
+            <a href="/dark_theme/profile.html">
+                <img class="header_auction" src="/photo/moon.svg">
             </a>
         </div>
     </header>
@@ -40,29 +40,29 @@
 
     <div class="profile_page block5_text">
         <!-- ЛЕВАЯ ЧАСТЬ -->
-        <div class="profile_menu">
-            <div class="header_regular menu_item " onclick="openTab(1)">
-                <img src="/photo/timer_light.svg" class="index_right price_text_background">
+        <div class="profile_menu_lighttheme">
+            <div class="header_regular menu_item_lighttheme " onclick="openTab(1)">
+                <img src="/photo/timer_dark.svg" class="index_right price_text_background">
                 <p class="price_text_background">Мои ставки</p>
             </div>
-            <div class="header_regular menu_item" onclick="openTab(2)">
-                <img src="/photo/folder_light.svg" class="index_right price_text_background">
+            <div class="header_regular menu_item_lighttheme" onclick="openTab(2)">
+                <img src="/photo/folder_dark.svg" class="index_right price_text_background">
                 <p class="price_text_background">Моя коллекция</p>
             </div>
-            <div class="header_regular menu_item" onclick="openTab(3)">
-                <img src="/photo/mail_light.svg" class="index_right price_text_background">
+            <div class="header_regular menu_item_lighttheme" onclick="openTab(3)">
+                <img src="/photo/mail_dark.svg" class="index_right price_text_background">
                 <p class="price_text_background">Уведомления</p>
             </div>
-            <div class="header_regular menu_item" onclick="openTab(4)">
-                <img src="/photo/directions_car_light.svg" class="index_right price_text_background">
+            <div class="header_regular menu_item_lighttheme" onclick="openTab(4)">
+                <img src="/photo/directions_car_dark.svg" class="index_right price_text_background">
                 <p class="price_text_background">Доставка</p>
             </div>
-            <div class="header_regular menu_item" onclick="openTab(5)">
-                <img src="/photo/edit_light.svg" class="index_right price_text_background">
+            <div class="header_regular menu_item_lighttheme" onclick="openTab(5)">
+                <img src="/photo/edit_dark.svg" class="index_right price_text_background">
                 <p class="price_text_background">Редактировать профиль</p>
             </div>
-            <div class="header_regular menu_item" onclick="openTab(6)">
-                <img src="/photo/help_light.svg" class="index_right price_text_background">
+            <div class="header_regular menu_item_lighttheme" onclick="openTab(6)">
+                <img src="/photo/help__dark.svg" class="index_right price_text_background">
                 <p class="price_text_background">Поддержка</p>
             </div>
         </div>
@@ -86,7 +86,7 @@
                         <div class="block4">
                             <a href="profile_active_bet.html">
                                 <div class="photo_container_block4">
-                                    <img src="/photo/auctuion_peace_1.png" class="block4_photo">
+                                    <img src="/photo/auctuion_peace_2.png" class="block4_photo">
                                 </div>
                             </a>
                             <p class="name_date_bold">Название</p>
@@ -108,7 +108,7 @@
                         <div class="block4">
                             <a href="profile_inactive_bet.html">
                                 <div class="photo_container_block4">
-                                    <img src="/photo/auctuion_peace_1.png" class="block4_photo greyphoto">
+                                    <img src="/photo/auctuion_peace_2.png" class="block4_photo greyphoto">
                                 </div>
                             </a>
                             <p class="name_date_bold">Название</p>
@@ -121,9 +121,9 @@
             <div class="content_block active" id="tab2">
                 <div class="profile_dropdown_wrapper">
                     <p class="header_regular_big about_page_br">Моя коллекция</p>
-                    <input placeholder="Сортировать по..." class="profile_input_darktheme name_date_bold" id="sortInput"
-                        readonly>
-                    <div class="profile_list_darktheme medium" id="sortList"></div>
+                    <input placeholder="Сортировать по..." class="profile_input_lighttheme name_date_bold"
+                        id="sortInput" readonly>
+                    <div class="profile_list_lighttheme medium" id="sortList"></div>
                 </div>
                 <div class="block5_text">
                     <div class="block3">
@@ -139,7 +139,7 @@
                         <div class="block4">
                             <a href="profile_active_bet.html">
                                 <div class="photo_container_block4">
-                                    <img src="/photo/auctuion_peace_1.png" class="block4_photo">
+                                    <img src="/photo/auctuion_peace_2.png" class="block4_photo">
                                 </div>
                             </a>
                             <p class="name_date_bold">Название</p>
@@ -152,7 +152,7 @@
             <div class="content_block" id="tab3">
                 <p class="header_regular_big about_page_br">Уведомления</p>
                 <div class="block5_text about_page_br">
-                    <div class="price_stroke_light">
+                    <div class="price_stroke_dark">
                         <div class="block2_2 price_text_background">
                             <p class="header_regular price_text_background">Вас перебили</p>
                             <div class="price_text_background">
@@ -162,21 +162,21 @@
                     </div>
                 </div>
                 <div class="about_page_br">
-                    <div class="price_stroke_light">
+                    <div class="price_stroke_dark">
                         <div class="price_text_background">
                             <p class="name_date_bold price_text_background">Торги заканчиваются!</p>
                         </div>
                     </div>
                 </div>
                 <div class="about_page_br">
-                    <div class="price_stroke_light">
+                    <div class="price_stroke_dark">
                         <div class="price_text_background">
                             <p class="name_date_bold price_text_background">Вы виыграли Аукцион №10!</p>
                         </div>
                     </div>
                 </div>
                 <div class="about_page_br">
-                    <div class="price_stroke_light schedule_bottom">
+                    <div class="price_stroke_dark">
                         <div class="block2_2 price_text_background">
                             <p class="header_regular price_text_background">Результат аукциона</p>
                             <div class="price_text_background">
@@ -190,7 +190,7 @@
             <div class="content_block" id="tab4">
                 <p class="header_regular_big about_page_br">Доставка</p>
                 <div class="block5_text about_page_br">
-                    <div class="price_stroke_light">
+                    <div class="price_stroke_dark">
                         <p class="name_date_bold schedule_bottom price_text_background">
                             Адреса для самовывоза
                         </p>
@@ -203,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project_details_container price_stroke_light about_page_br">
+                <div class="project_details_container price_stroke_dark about_page_br">
                     <p class="name_date_bold">
                         Доставка по предварительному звонку курьера. Согласуем удобное время.
                     </p>
@@ -211,15 +211,15 @@
                 <p class="header_regular block4_text">
                     Телефон для обратной связи
                 </p>
-                <p class="header_regular instruction_href schedule_bottom">
+                <p class="header_regular instruction_href">
                     +375(12)34-67-89
                 </p>
             </div>
 
             <div class="content_block" id="tab5">
                 <p class="header_regular_big about_page_br">Редактировать профиль</p>
-                <div class="project_details_container price_stroke_light registartion_gap schedule_bottom">
-                    <img class="header_account" src="/photo/new_photo_light.svg">
+                <div class="project_details_container price_stroke_dark registartion_gap schedule_bottom">
+                    <img class="header_account" src="/photo/new_photo_dark.svg">
                     <p class="header_regular">Имя пользователя</p>
                     <button class="new_photo_button_full button">
                         Новое фото
@@ -228,22 +228,22 @@
                 <div class="profile_inputs">
                     <p class="medium profile_minusgap">Мобильный телефон или электронный адрес</p>
                     <input type="text" placeholder="Имя пользователя, номер мобильного телефона, эл. почта"
-                        class="profile_input_darktheme signature_regular">
+                        class="profile_input_lighttheme signature_regular">
                     <p class="medium profile_minusgap">Пароль</p>
-                    <input type="password" placeholder="Пароль" class="profile_input_darktheme signature_regular">
+                    <input type="password" placeholder="Пароль" class="profile_input_lighttheme signature_regular">
                     <p class="medium profile_minusgap">Дата рождения</p>
-                    <div class="registartion_gap schedule_bottom">
+                    <div class="registartion_gap">
                         <div class="dropdown_wrapper">
-                            <input placeholder="День" class="profile_input_darktheme signature_regular" readonly>
-                            <div class="profile_list_darktheme signature_regular" id="days"></div>
+                            <input placeholder="День" class="profile_input_lighttheme signature_regular" readonly>
+                            <div class="profile_list_lighttheme signature_regular" id="days"></div>
                         </div>
                         <div class="dropdown_wrapper">
-                            <input placeholder="Месяц" class="profile_input_darktheme signature_regular" readonly>
-                            <div class="profile_list_darktheme signature_regular" id="months"></div>
+                            <input placeholder="Месяц" class="profile_input_lighttheme signature_regular" readonly>
+                            <div class="profile_list_lighttheme signature_regular" id="months"></div>
                         </div>
                         <div class="dropdown_wrapper">
-                            <input placeholder="Год" class="profile_input_darktheme signature_regular" readonly>
-                            <div class="profile_list_darktheme signature_regular" id="years"></div>
+                            <input placeholder="Год" class="profile_input_lighttheme signature_regular" readonly>
+                            <div class="profile_list_lighttheme signature_regular" id="years"></div>
                         </div>
                     </div>
                 </div>
@@ -252,7 +252,7 @@
             <div class="content_block" id="tab6">
                 <p class="header_regular_big about_page_br">Поддержка</p>
                 <div class="schedule_top schedule_bottom">
-                    <div class="auction_text_dark">
+                    <div class="auction_text_light">
                         <p class="name_date_bold schedule_bottom">
                             Хотите купить?
                         </p>

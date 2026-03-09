@@ -1,9 +1,9 @@
 body {
-  padding: 0px 0px 0 0px;  
+  padding: 0px 0px 0 0px;
 }
 
 /* Контейнер обеих частей */
-.page_split{
+.page_split {
   display: flex;
   width: 100%;
   min-height: 100vh;
@@ -11,7 +11,7 @@ body {
 }
 
 /* Левая часть – прозрачная */
-.left_side{
+.left_side {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -19,29 +19,39 @@ body {
 }
 
 /* Правая часть – тёмно-фиолетовый полупрозрачный фон */
-.right_side_dark{
+.right_side_dark {
   flex: 1;
-  display: flex;              /* используем flex для вертикального центрирования */
-  flex-direction: column;     /* элементы вертикально */
-  justify-content: center;    /* центрируем по вертикали */
-  align-items: center;        /* центрируем по горизонтали */
-  gap: 20px;                  /* общий промежуток между элементами (в том числе между картинкой и кнопками) */
-  background-color: #191425; 
-} 
+  display: flex;
+  /* используем flex для вертикального центрирования */
+  flex-direction: column;
+  /* элементы вертикально */
+  justify-content: center;
+  /* центрируем по вертикали */
+  align-items: center;
+  /* центрируем по горизонтали */
+  gap: 20px;
+  /* общий промежуток между элементами (в том числе между картинкой и кнопками) */
+  background-color: #191425;
+}
 
 /* Правая часть – тёмно-фиолетовый полупрозрачный фон */
-.right_side_light{
+.right_side_light {
   flex: 1;
-  display: flex;              /* используем flex для вертикального центрирования */
-  flex-direction: column;     /* элементы вертикально */
-  justify-content: center;    /* центрируем по вертикали */
-  align-items: center;        /* центрируем по горизонтали */
-  gap: 20px;                  /* общий промежуток между элементами (в том числе между картинкой и кнопками) */
-  background-color: #E3D9D5; 
-} 
+  display: flex;
+  /* используем flex для вертикального центрирования */
+  flex-direction: column;
+  /* элементы вертикально */
+  justify-content: center;
+  /* центрируем по вертикали */
+  align-items: center;
+  /* центрируем по горизонтали */
+  gap: 20px;
+  /* общий промежуток между элементами (в том числе между картинкой и кнопками) */
+  background-color: #E3D9D5;
+}
 
 /* Вертикальная линия посередине */
-.page_split::before{
+.page_split::before {
   content: "";
   position: absolute;
   top: 0;
@@ -54,41 +64,46 @@ body {
 
 /* Текст */
 .left_side p,
-.right_side p{
+.right_side p {
   margin: 0;
-  width: 100%;           /* растягиваем на всю половину */
-  max-width: 510px;      /* но не шире 510px */
+  width: 100%;
+  /* растягиваем на всю половину */
+  max-width: 510px;
+  /* но не шире 510px */
   text-align: center;
   font-size: 36px;
   line-height: 1.3;
-  background: transparent; /* полностью прозрачный фон текста */
+  background: transparent;
+  /* полностью прозрачный фон текста */
 }
 
 /* Градиент для слов "именно вас" */
-.gradient{
-  background: linear-gradient(90deg, #FF0004, #5658F6); /* фиолетово-бежевый градиент */
+.gradient {
+  background: linear-gradient(90deg, #FF0004, #5658F6);
+  /* фиолетово-бежевый градиент */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-.account_icon{
+.account_icon {
   background: none;
   margin-bottom: 50px;
 }
 
 /* верх */
-.login_header{
+.login_header {
   display: flex;
   align-items: center;
   gap: 10px;
-  align-self: flex-start; /* прижимает к левому краю */
+  align-self: flex-start;
+  /* прижимает к левому краю */
   background: transparent;
   margin-top: 20px;
 }
 
 /* середина */
-.login_inputs{
+.login_inputs {
   margin-top: auto;
   margin-bottom: auto;
   display: flex;
@@ -98,40 +113,44 @@ body {
 }
 
 /* поля ввода темная тема*/
-.login_input_darktheme{
-  padding: 12px 15px;              
-  border-radius: 15px;              
-  border: 1px solid #4648B6;   /* обычная рамка */    
-  color: #9282B6;              /* обычный текст */              
-  transition: all 0.3s ease;     
-  background: none;  
+.login_input_darktheme {
+  padding: 12px 15px;
+  border-radius: 15px;
+  border: 1px solid #4648B6;
+  /* обычная рамка */
+  color: #9282B6;
+  /* обычный текст */
+  transition: all 0.3s ease;
+  background: none;
   text-align: left;
 }
 
 /* при наведении */
 .login_input_darktheme:hover {
-  border-color: #5658F6;  /* новая рамка */          
-  color: #C3ABF5;         /* новый текст */                
+  border-color: #5658F6;
+  /* новая рамка */
+  color: #C3ABF5;
+  /* новый текст */
 }
 
 /* placeholder */
-.login_input_darktheme::placeholder{
+.login_input_darktheme::placeholder {
   color: #9282B6;
 }
 
 /* placeholder при наведении */
-.login_input_darktheme:hover::placeholder{
+.login_input_darktheme:hover::placeholder {
   color: #C3ABF5;
 }
 
-.forget_text{
-  background: transparent; 
-  text-align: center; 
+.forget_text {
+  background: transparent;
+  text-align: center;
   cursor: pointer;
 }
 
 /* низ */
-.login_buttons{
+.login_buttons {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -140,42 +159,50 @@ body {
 }
 
 /* поля ввода светлая тема*/
-.login_input_lighttheme{
-  padding: 12px 15px;              
-  border-radius: 15px;              
-  border: 1px solid #5658F6;   /* обычная рамка */    
-  color: #9282B6;              /* обычный текст */             
-  transition: all 0.3s ease;     
-  background: none;  
+.login_input_lighttheme {
+  padding: 12px 15px;
+  border-radius: 15px;
+  border: 1px solid #5658F6;
+  /* обычная рамка */
+  color: #9282B6;
+  /* обычный текст */
+  transition: all 0.3s ease;
+  background: none;
   text-align: left;
 }
 
 /* при наведении */
 .login_input_lighttheme:hover {
-  border-color: #111111;  /* новая рамка */          
-  color: #111111;         /* новый текст */                
+  border-color: #111111;
+  /* новая рамка */
+  color: #111111;
+  /* новый текст */
 }
 
 /* placeholder */
-.login_input_lighttheme::placeholder{
+.login_input_lighttheme::placeholder {
   color: #9282B6;
 }
 
 /* placeholder при наведении */
-.login_input_lighttheme:hover::placeholder{
+.login_input_lighttheme:hover::placeholder {
   color: #111111;
 }
 
-.registration_place{
-  display: flex;              /* используем flex для вертикального центрирования */
-  flex-direction: column;     /* элементы вертикально */
-  justify-content: center;    /* центрируем по вертикали */
-  align-items: center;        /* центрируем по горизонтали */ 
+.registration_place {
+  display: flex;
+  /* используем flex для вертикального центрирования */
+  flex-direction: column;
+  /* элементы вертикально */
+  justify-content: center;
+  /* центрируем по вертикали */
+  align-items: center;
+  /* центрируем по горизонтали */
   gap: 40px;
 }
 
 /* верх */
-.registration_header{
+.registration_header {
   align-items: center;
   text-align: left;
   gap: 10px;
@@ -184,7 +211,7 @@ body {
 }
 
 /* середина */
-.registration_inputs{
+.registration_inputs {
   margin-top: auto;
   margin-bottom: auto;
   display: flex;
@@ -193,61 +220,70 @@ body {
 }
 
 /* поля ввода темная тема*/
-.registration_input_darktheme{
+.registration_input_darktheme {
   padding: 12px;
-  padding-right: 35px; /* место для картинки */
+  padding-right: 35px;
+  /* место для картинки */
   border-radius: 15px;
   border: 1px solid #4648B6;
   color: #9282B6;
   transition: all 0.3s ease;
   background: url("/photo/arrow_down_darktheme.svg") no-repeat right 10px center;
-  background-size: 20px 20px; /* размер картинки */
+  background-size: 20px 20px;
+  /* размер картинки */
   text-align: left;
   width: 190px;
 }
 
 /* при наведении */
 .registration_input_darktheme:hover {
-  border-color: #5658F6;  /* новая рамка */          
-  color: #C3ABF5;         /* новый текст */                
+  border-color: #5658F6;
+  /* новая рамка */
+  color: #C3ABF5;
+  /* новый текст */
 }
 
 /* placeholder */
-.registration_input_darktheme::placeholder{
+.registration_input_darktheme::placeholder {
   color: #9282B6;
 }
 
 /* placeholder при наведении */
-.registration_input_darktheme:hover::placeholder{
+.registration_input_darktheme:hover::placeholder {
   color: #C3ABF5;
 }
 
 /* поля ввода светлая тема*/
-.registration_input_lighttheme{
-  padding: 12px;              
-  border-radius: 15px;              
-  border: 1px solid #5658F6;   /* обычная рамка */    
-  color: #9282B6;              /* обычный текст */             
-  transition: all 0.3s ease;     
+.registration_input_lighttheme {
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #5658F6;
+  /* обычная рамка */
+  color: #9282B6;
+  /* обычный текст */
+  transition: all 0.3s ease;
   background: url("/photo/arrow_down_lighttheme.svg") no-repeat right 10px center;
-  background-size: 20px 20px; /* размер картинки */
+  background-size: 20px 20px;
+  /* размер картинки */
   text-align: left;
   width: 190px;
 }
 
 /* при наведении */
 .registration_input_lighttheme:hover {
-  border-color: #111111;  /* новая рамка */          
-  color: #111111;         /* новый текст */                
+  border-color: #111111;
+  /* новая рамка */
+  color: #111111;
+  /* новый текст */
 }
 
 /* placeholder */
-.registration_input_lighttheme::placeholder{
+.registration_input_lighttheme::placeholder {
   color: #9282B6;
 }
 
 /* placeholder при наведении */
-.registration_input_lighttheme:hover::placeholder{
+.registration_input_lighttheme:hover::placeholder {
   color: #111111;
 }
 
@@ -313,6 +349,224 @@ body {
   color: #111111;
 }
 
-.minusgap{
+.minusgap {
   margin-bottom: -10px;
+}
+
+
+/* планшет: ≤768px */
+
+@media (min-width: 421px) and (max-width: 768px) {
+
+  .page_split {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .page_split::before {
+    display: none;
+  }
+
+  .left_side {
+    display: none;
+  }
+
+  .left_side p {
+    font-size: 26px;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .right_side_dark,
+  .right_side_light {
+    flex: 1;
+    padding: 30px;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .account_icon {
+    width: 150px;
+    margin-bottom: 10px;
+    align-self: center;
+  }
+
+  .login_inputs {
+    gap: 20px;
+  }
+
+  .login_input_darktheme,
+  .login_input_lighttheme {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .login_buttons {
+    margin-bottom: 40px;
+    gap: 12px;
+  }
+
+  .registration_button_full {
+    width: 100%;
+    padding: 12px 60px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .registration_button_dark,
+  .registration_button_light {
+    width: 100%;
+    padding: 12px 40px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* Регистрация */
+  .registration_place {
+    padding: 30px;
+    gap: 24px;
+  }
+
+  .registration_header {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .registration_inputs {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .registration_input_darktheme,
+  .registration_input_lighttheme {
+    width: 100%;
+  }
+
+  .dropdown_wrapper {
+    width: 100%;
+  }
+
+  .dropdown_list_darktheme,
+  .dropdown_list_lighttheme {
+    width: 100%;
+  }
+
+  /* Группа день/месяц/год на планшете — в строку */
+  .registartion_gap {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .registartion_gap .dropdown_wrapper {
+    flex: 1;
+    min-width: 80px;
+  }
+}
+
+
+/* телефон: ≤420px */
+@media (max-width: 420px) {
+
+  .page_split {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .page_split::before {
+    display: none;
+  }
+
+  .left_side {
+    display: none;
+  }
+
+  .right_side_dark,
+  .right_side_light {
+    flex: 1;
+    width: 100%;
+    min-height: 100vh;
+    padding: 24px 20px;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .account_icon {
+    width: 100px;
+    margin-bottom: 6px;
+    align-self: center;
+  }
+
+  .login_header {
+    margin-top: 0;
+  }
+
+  .login_inputs {
+    gap: 18px;
+  }
+
+  .login_input_darktheme,
+  .login_input_lighttheme {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 15px;
+  }
+
+  .login_buttons {
+    margin-bottom: 30px;
+    gap: 10px;
+  }
+
+  .registration_button_full {
+    width: 100%;
+    padding: 12px 40px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .registration_button_dark,
+  .registration_button_light {
+    width: 100%;
+    padding: 12px 40px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* Страница регистрации */
+  .registration_place {
+    padding: 20px 16px;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .registration_header {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .registration_inputs {
+    width: 100%;
+    gap: 18px;
+  }
+
+  .registration_input_darktheme,
+  .registration_input_lighttheme {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* Группа день/месяц/год → в столбик на телефоне */
+  .registartion_gap {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dropdown_wrapper {
+    width: 100%;
+  }
+
+  .dropdown_list_darktheme,
+  .dropdown_list_lighttheme {
+    width: 100%;
+  }
 }
