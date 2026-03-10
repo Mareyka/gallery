@@ -313,6 +313,11 @@ body {
   right: 0;
 }
 
+hr {
+  border: none;
+  border-bottom: 1px solid;
+}
+
 .block_3_main {
   display: flex;
   justify-content: space-between;
