@@ -262,6 +262,7 @@ body {
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .block3_width {
@@ -327,6 +328,7 @@ body {
   display: flex;
   width: 209px;
   justify-content: space-between;
+  gap: 15px;
 }
 
 .block3_3_dates {
@@ -348,7 +350,6 @@ body {
 
 .photo_container_block4 {
   position: relative;
-  margin-right: 40px;
 }
 
 .photo_container_block4::after {
@@ -373,8 +374,8 @@ body {
 }
 
 .block4 {
-  display: grid;
-  justify-content: space-between;
+  min-width: 0;
+  flex: 1;
 }
 
 .block4_text {
@@ -410,7 +411,7 @@ body {
 }
 
 .events_main_photo {
-  width: 1320px;
+  width: 100%;
   height: 420px;
   position: relative;
   object-fit: cover;
@@ -483,6 +484,12 @@ body {
 .events_text3_photo2 {
   margin-bottom: 30px;
   background: none;
+}
+
+.block_soon_event {
+  display: grid;
+  justify-content: space-between;
+  margin-right: auto;
 }
 
 .block_past_event {
@@ -678,7 +685,6 @@ body {
 
 /* первое и третье */
 .project_photo img:nth-child(1) {
-  flex: 1;
   width: 20%;
   filter: brightness(0.5);
   object-position: left center;
@@ -726,7 +732,7 @@ body {
   border: 1px solid #EFEAD3;
   /* обычная рамка */
   background: none;
-  background: url("/photo/search_light.svg") no-repeat left 10px center;
+  background: url("../photo/search_light.svg") no-repeat left 10px center;
   background-size: 20px 20px;
   /* размер картинки */
   text-align: left;
@@ -742,7 +748,7 @@ body {
   border: 1px solid #111111;
   /* обычная рамка */
   background: none;
-  background: url("/photo/search_dark.svg") no-repeat left 10px center;
+  background: url("../photo/search_dark.svg") no-repeat left 10px center;
   background-size: 20px 20px;
   /* размер картинки */
   text-align: left;
@@ -823,10 +829,14 @@ body {
 .auction_card_photo {
   position: relative;
   object-fit: cover;
-  width: 440px;
   height: 440px;
+  width: 100%;
   border-radius: 10px;
   margin-bottom: 30px;
+}
+
+#slider_link {
+  width: 70%;
 }
 
 .auction_text_dark {
@@ -867,11 +877,11 @@ body {
 }
 
 .slider_arrow.left {
-  left: -60px;
+  left: 10px;
 }
 
 .slider_arrow.right {
-  right: -60px;
+  right: 10px;
 }
 
 .contact_person {
@@ -1572,8 +1582,8 @@ body {
 
 
   .block4 {
-    width: calc(50% - 10px);
     margin-bottom: 20px;
+    margin-right: 0;
   }
 
   .block4_photo {
@@ -1695,6 +1705,10 @@ body {
     width: 100%;
   }
 
+  .schedule_details {
+    justify-content: center;
+  }
+
   /*  EVENTS  */
   .events_main_photo {
     width: 660px;
@@ -1725,7 +1739,7 @@ body {
   }
 
   .events_text_2 {
-    bottom: 100px;
+    bottom: 110px;
     left: 16px;
     z-index: 1;
   }
@@ -1748,6 +1762,7 @@ body {
   }
 
   .block5_text>.block3>.block4:has(.events_photo2),
+  .block_soon_event,
   .block_past_event {
     display: flex;
     flex-direction: column;
@@ -1825,9 +1840,7 @@ body {
     width: 100%;
   }
 
-  .announcement_bold {
-    font-size: 44px;
-  }
+
 
   /*  AUCTION CARD  */
 
@@ -1838,14 +1851,6 @@ body {
 
   .photo_slider {
     width: 100%;
-  }
-
-  .slider_arrow.left {
-    left: -20px;
-  }
-
-  .slider_arrow.right {
-    right: -20px;
   }
 
   .block3:has(.photo_slider) {
@@ -2001,7 +2006,7 @@ body {
 
   /*  шрифт телефона  */
   .large {
-    font-size: 52px;
+    font-size: 50px;
   }
 
   .page_name {
@@ -2163,7 +2168,6 @@ body {
   }
 
   .block4 {
-    width: 100%;
     margin-bottom: 20px;
   }
 
@@ -2321,6 +2325,9 @@ body {
     width: 100%;
   }
 
+  .schedule_details {
+    justify-content: center;
+  }
 
   /*  EVENTS  */
   .events_main_photo {
@@ -2362,7 +2369,9 @@ body {
     height: 220px;
   }
 
-  .block5_text>.block3>.block4:has(.events_photo2) {
+  .block5_text>.block3>.block4:has(.events_photo2),
+  .block_soon_event,
+  .block_past_event {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2463,14 +2472,6 @@ body {
 
   .photo_slider {
     width: 100%;
-  }
-
-  .slider_arrow.left {
-    left: -16px;
-  }
-
-  .slider_arrow.right {
-    right: -16px;
   }
 
   .block3:has(.photo_slider) {

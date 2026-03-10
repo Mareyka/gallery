@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ── Списки регистрации (день / месяц / год) ──────────────────
+  //  Списки регистрации (день / месяц / год) 
 
   const daysInput = document.querySelector('input[placeholder="День"]');
   const monthsInput = document.querySelector('input[placeholder="Месяц"]');
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ── Дропдаун сортировки в профиле ────────────────────────────
+  //  Дропдаун сортировки в профиле 
 
   const sortInput = document.getElementById("sortInput");
   const sortList = document.getElementById("sortList");
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ── Закрываем все дропдауны при клике вне ────────────────────
+  //  Закрываем все дропдауны при клике вне 
 
   document.addEventListener("click", (e) => {
     if (daysInput && daysList && !daysInput.contains(e.target) && !daysList.contains(e.target)) daysList.style.display = "none";
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (sortInput && sortList && !sortInput.contains(e.target) && !sortList.contains(e.target)) sortList.classList.remove("open");
   });
 
-  // ── Бургер-меню ───────────────────────────────────────────────
+  //  Бургер-меню 
 
   const header = document.querySelector("header");
   if (!header) return;
@@ -91,20 +91,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const sideMenu = document.createElement("nav");
   sideMenu.className = "side-menu";
 
-  header.querySelectorAll(".header_element").forEach(link => {
+  // Все .header_element — разделяем «Выход» и остальные
+  const allLinks = [...header.querySelectorAll(".header_element")];
+  const exitLink = allLinks.find(l => l.textContent.trim() === "Выход");
+
+  // Сначала все ссылки кроме «Выход»
+  allLinks.forEach(link => {
+    if (link === exitLink) return;
     const clone = link.cloneNode(true);
     clone.className = "side-menu-link";
     sideMenu.appendChild(clone);
   });
 
-  // Ссылка «Профиль» — ищем иконку аккаунта
+  // Профиль — если есть иконка аккаунта в хедере
   const accountImg = header.querySelector("a img.header_account");
   if (accountImg) {
-    const profileLink = document.createElement("a");
-    profileLink.className = "side-menu-link side-menu-profile";
-    profileLink.href = accountImg.closest("a").getAttribute("href") || "#";
-    profileLink.textContent = "Профиль";
-    sideMenu.appendChild(profileLink);
+    const accountHref = accountImg.closest("a").getAttribute("href") || "";
+    if (!accountHref.includes("getin")) {
+      const profileLink = document.createElement("a");
+      profileLink.className = "side-menu-link side-menu-profile";
+      profileLink.href = accountHref;
+      profileLink.textContent = "Профиль";
+      sideMenu.appendChild(profileLink);
+    }
+  }
+
+  // Выход — после Профиля
+  if (exitLink) {
+    const exitClone = exitLink.cloneNode(true);
+    exitClone.className = "side-menu-link";
+    sideMenu.appendChild(exitClone);
   }
 
   // Переключатель темы — ищем sun.svg или moon.svg
@@ -158,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ── Таймер аукциона ───────────────────────────────────────────
+//  Таймер аукциона 
 
 const auctionTimerEl = document.getElementById("auction_timer");
 if (auctionTimerEl) {
@@ -181,7 +197,7 @@ if (auctionTimerEl) {
 }
 
 
-// ── Слайдер ───────────────────────────────────────────────────
+//  Слайдер 
 
 const slider = document.getElementById("slider_image");
 const next = document.getElementById("next");
@@ -189,9 +205,9 @@ const prev = document.getElementById("prev");
 
 if (slider && next && prev) {
   const images = [
-    "/photo/auctuion_peace_1.png",
-    "/photo/auctuion_peace_2.png",
-    "/photo/auctuion_peace_3.png"
+    "../photo/peace_1.png",
+    "../photo/peace_1_detail1.png",
+    "../photo/peace_1_detail2.png"
   ];
   let current = 0;
 
@@ -201,7 +217,7 @@ if (slider && next && prev) {
   next.onclick = () => { current = (current + 1) % images.length; slider.src = images[current]; updateDots(); };
   prev.onclick = () => { current = (current - 1 + images.length) % images.length; slider.src = images[current]; updateDots(); };
 
-  // ── Точки и свайп (только на телефоне ≤420px) ────────────────
+  //  Точки и свайп (только на телефоне ≤420px) 
   const photoSlider = document.querySelector('.photo_slider');
   if (photoSlider && window.innerWidth <= 420) {
 
@@ -267,7 +283,7 @@ if (slider && next && prev) {
 }
 
 
-// ── Модальное окно ────────────────────────────────────────────
+//  Модальное окно 
 
 const modal = document.getElementById("modal");
 const openBtn = document.getElementById("openModalBtn");
@@ -282,7 +298,7 @@ if (modal && openBtn && closeBtn) {
 }
 
 
-// ── Профиль — переключение табов ─────────────────────────────
+//  Профиль — переключение табов 
 
 function openTab(tabNumber) {
   document.querySelectorAll(".content_block").forEach(tab => tab.classList.remove("active"));

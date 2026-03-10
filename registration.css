@@ -228,7 +228,7 @@ body {
   border: 1px solid #4648B6;
   color: #9282B6;
   transition: all 0.3s ease;
-  background: url("/photo/arrow_down_darktheme.svg") no-repeat right 10px center;
+  background: url("../photo/arrow_down_darktheme.svg") no-repeat right 10px center;
   background-size: 20px 20px;
   /* размер картинки */
   text-align: left;
@@ -262,7 +262,7 @@ body {
   color: #9282B6;
   /* обычный текст */
   transition: all 0.3s ease;
-  background: url("/photo/arrow_down_lighttheme.svg") no-repeat right 10px center;
+  background: url("../photo/arrow_down_lighttheme.svg") no-repeat right 10px center;
   background-size: 20px 20px;
   /* размер картинки */
   text-align: left;
