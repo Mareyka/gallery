@@ -236,7 +236,7 @@ if (slider && next && prev) {
       dot.style.cssText = `
         width: 8px; height: 8px;
         border-radius: 50%;
-        background: rgba(0,0,0,0.25);
+        background: #EFEAD3;
         transition: background 0.2s;
         cursor: pointer;
       `;
@@ -260,7 +260,7 @@ if (slider && next && prev) {
 
     updateDots = function () {
       dots.forEach((d, i) => {
-        d.style.background = i === current ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.25)';
+        d.style.background = i === current ? '#9c9c9c' : '#EFEAD3';
       });
     };
 
