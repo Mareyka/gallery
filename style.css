@@ -431,6 +431,18 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
 }
 
+.events_text_soon {
+  position: absolute;
+  bottom: 390px;
+  left: 20px;
+  background: #111111;
+  color: #EFEAD3;
+  padding: 10px 16px;
+  /* внутренние отступы */
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
 .past_events_text_1 {
   position: absolute;
   bottom: 390px;
@@ -1726,10 +1738,17 @@ body {
   }
 
   .events_text_1 {
-    bottom: 260px;
+    bottom: 280px;
     left: 14px;
     padding: 6px 12px;
     z-index: 1;
+  }
+
+  .events_text_soon {
+    bottom: auto;
+    top: -290px;
+    left: 14px;
+    padding: 6px 12px;
   }
 
   .past_events_text_1 {
@@ -2337,14 +2356,21 @@ body {
 
   .events_text_1 {
     bottom: auto;
-    top: -250px;
+    top: -260px;
+    left: 14px;
+    padding: 6px 12px;
+  }
+
+  .events_text_soon {
+    bottom: auto;
+    top: -240px;
     left: 14px;
     padding: 6px 12px;
   }
 
   .past_events_text_1 {
     bottom: auto;
-    top: -250px;
+    top: -240px;
     left: 14px;
     padding: 6px 12px;
   }
