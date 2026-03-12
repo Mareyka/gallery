@@ -769,7 +769,7 @@ hr {
   border: 1px solid #EFEAD3;
   /* обычная рамка */
   background: none;
-  background: url("../photo/search_light.svg") no-repeat left 10px center;
+  background: url("photo/search_light.svg") no-repeat left 10px center;
   background-size: 20px 20px;
   /* размер картинки */
   text-align: left;
@@ -785,7 +785,7 @@ hr {
   border: 1px solid #111111;
   /* обычная рамка */
   background: none;
-  background: url("../photo/search_dark.svg") no-repeat left 10px center;
+  background: url("photo/search_dark.svg") no-repeat left 10px center;
   background-size: 20px 20px;
   /* размер картинки */
   text-align: left;
@@ -2538,6 +2538,10 @@ hr {
 
   /*  AUCTION CARD  */
   /* без стрелок  */
+  #slider_image {
+    transition: opacity 0.2s ease;
+  }
+
   .slider_arrow {
     display: none;
   }
