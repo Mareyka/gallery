@@ -238,13 +238,18 @@ if (slider && next && prev) {
   let updateDots = function () { };
 
   function goTo(index) {
-    slider.style.opacity = "0";
-    setTimeout(() => {
-      current = (index + images.length) % images.length;
-      slider.src = images[current];
-      slider.style.opacity = "1";
-      updateDots();
-    }, 200);
+    const dir = index > current ? 1 : -1;
+    slider.style.transition = "none";
+    slider.style.transform = `translateX(${-dir * 100}%)`;
+    current = (index + images.length) % images.length;
+    slider.src = images[current];
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        slider.style.transition = "transform 0.3s ease";
+        slider.style.transform = "translateX(0)";
+        updateDots();
+      });
+    });
   }
 
   next.onclick = () => goTo(current + 1);
