@@ -91,19 +91,37 @@ document.addEventListener("DOMContentLoaded", function () {
   const sideMenu = document.createElement("nav");
   sideMenu.className = "side-menu";
 
-  // Все .header_element — разделяем «Выход» и остальные
   const allLinks = [...header.querySelectorAll(".header_element")];
   const exitLink = allLinks.find(l => l.textContent.trim() === "Выход");
 
-  // Сначала все ссылки кроме «Выход»
+  // Контейнер верхних ссылок
+  const topLinks = document.createElement("div");
+  topLinks.style.cssText = "flex: 1;";
+
+  // Контейнер нижних ссылок (Вход, Регистрация, Выход)
+  const bottomLinks = document.createElement("div");
+  bottomLinks.style.cssText = "border-top: 1px solid rgba(128,128,128,0.2); padding-top: 10px; margin-top: 10px;";
+
+  // Слова которые идут вниз
+  const bottomTexts = new Set(["Вход", "Регистрация", "Вход / Регистрация"]);
+
+  // Все ссылки — сортируем, без дублей
+  const seen = new Set();
   allLinks.forEach(link => {
     if (link === exitLink) return;
+    const text = link.textContent.trim();
+    if (seen.has(text)) return;
+    seen.add(text);
     const clone = link.cloneNode(true);
     clone.className = "side-menu-link";
-    sideMenu.appendChild(clone);
+    if (bottomTexts.has(text)) {
+      bottomLinks.appendChild(clone);
+    } else {
+      topLinks.appendChild(clone);
+    }
   });
 
-  // Профиль — если есть иконка аккаунта в хедере
+  // Профиль — наверх
   const accountImg = header.querySelector("a img.header_account");
   if (accountImg) {
     const accountHref = accountImg.closest("a").getAttribute("href") || "";
@@ -112,25 +130,30 @@ document.addEventListener("DOMContentLoaded", function () {
       profileLink.className = "side-menu-link side-menu-profile";
       profileLink.href = accountHref;
       profileLink.textContent = "Профиль";
-      sideMenu.appendChild(profileLink);
+      topLinks.appendChild(profileLink);
     }
   }
 
-  // Выход — после Профиля
+  // Выход — вниз
   if (exitLink) {
     const exitClone = exitLink.cloneNode(true);
     exitClone.className = "side-menu-link";
-    sideMenu.appendChild(exitClone);
+    bottomLinks.appendChild(exitClone);
   }
 
-  // Переключатель темы — ищем sun.svg или moon.svg
+  sideMenu.appendChild(topLinks);
+  sideMenu.appendChild(bottomLinks);
+
+  // Тема — верхний правый угол бокового меню
   const themeImg = header.querySelector('a img[src*="sun.svg"], a img[src*="moon.svg"]');
   if (themeImg) {
     const themeLink = document.createElement("a");
-    themeLink.className = "side-menu-link side-menu-theme";
     themeLink.href = themeImg.closest("a").getAttribute("href") || "#";
-    const isDark = themeImg.getAttribute("src").includes("sun.svg");
-    themeLink.textContent = isDark ? "Светлая тема" : "Темная тема";
+    const img = document.createElement("img");
+    img.src = themeImg.getAttribute("src");
+    img.style.cssText = "width: 24px; height: 24px;";
+    themeLink.appendChild(img);
+    themeLink.style.cssText = "position: absolute; top: 24px; right: 28px;";
     sideMenu.appendChild(themeLink);
   }
 
@@ -221,7 +244,6 @@ if (slider && next && prev) {
   const photoSlider = document.querySelector('.photo_slider');
   if (photoSlider && window.innerWidth <= 420) {
 
-    // Контейнер точек
     const dotsContainer = document.createElement('div');
     dotsContainer.style.cssText = `
       display: flex;
@@ -266,7 +288,6 @@ if (slider && next && prev) {
 
     updateDots();
 
-    // Свайп
     let touchStartX = 0;
     slider.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].clientX;
@@ -303,4 +324,19 @@ if (modal && openBtn && closeBtn) {
 function openTab(tabNumber) {
   document.querySelectorAll(".content_block").forEach(tab => tab.classList.remove("active"));
   document.getElementById("tab" + tabNumber).classList.add("active");
+}
+
+// шапка
+const headerEl = document.querySelector("header");
+if (headerEl) {
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const current = window.scrollY;
+    if (current > lastScroll && current > 80) {
+      headerEl.style.transform = "translateY(-100%)";
+    } else {
+      headerEl.style.transform = "translateY(0)";
+    }
+    lastScroll = current;
+  });
 }

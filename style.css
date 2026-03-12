@@ -5,7 +5,7 @@
 }
 
 body {
-  padding: 35px 60px 0 60px;
+  padding: 100px 60px 0 60px;
 }
 
 @font-face {
@@ -165,6 +165,17 @@ body {
 
 .header {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 35px 60px 35px 60px;
+  transition: transform 0.3s ease;
+}
+
+.flex {
+  display: flex;
 }
 
 .header_element {
@@ -176,6 +187,11 @@ body {
   margin-right: 10px;
   text-decoration: none;
 }
+
+.nodecoration {
+  text-decoration: none;
+}
+
 
 .auction-wrapper {
   display: flex;
@@ -388,12 +404,16 @@ hr {
 }
 
 .block5_text {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .about_page {
   margin-top: 50px;
   text-align: center;
+}
+
+.center {
+  text-align: justify;
 }
 
 .about_page_text {
@@ -1434,6 +1454,10 @@ hr {
     padding: 28px 30px 0 30px;
   }
 
+  .header {
+    padding: 18px 30px 18px 30px;
+  }
+
   /* ── Хедер / бургер ── */
   .header>.header_element {
     display: none;
@@ -1599,7 +1623,7 @@ hr {
 
 
   .block4 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-right: 0;
   }
 
@@ -1867,7 +1891,7 @@ hr {
 
 
   /*  AUCTION CARD  */
-
+  /*  AUCTION CARD  */
   .auction_card_photo {
     width: 100%;
     height: 340px;
@@ -1890,17 +1914,36 @@ hr {
     width: 100%;
   }
 
+  .auction_card_block {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+
+  .auction_card_block .project_details_container {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .auction_card_block>div:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .auction_card_block .bet_button_full {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
   .auction_card_dark,
   .auction_card_light {
     width: 100%;
+    height: 100%;
   }
 
   .auction_text_dark,
   .auction_text_light {
-    width: 100%;
-  }
-
-  .bet_button_full {
     width: 100%;
   }
 
@@ -1911,7 +1954,7 @@ hr {
   .bet_input_darktheme,
   .bet_input_lighttheme {
     flex: 1;
-    width: auto;
+    width: 100%;
   }
 
   .project_name.auctuion_pr_width {
@@ -2001,6 +2044,10 @@ hr {
 
   body {
     padding: 18px 16px 0 16px;
+  }
+
+  .header {
+    padding: 16px 16px 16px 16px;
   }
 
   /* ── Хедер / бургер ── */
@@ -2098,7 +2145,7 @@ hr {
   }
 
   .block5_text {
-    margin-top: 30px;
+    margin-top: 40px;
   }
 
   .schedule_bottom {
@@ -2490,10 +2537,13 @@ hr {
 
 
   /*  AUCTION CARD  */
-
   /* без стрелок  */
   .slider_arrow {
     display: none;
+  }
+
+  #slider_link {
+    width: 100%;
   }
 
   .auction_card_photo {
@@ -2521,6 +2571,7 @@ hr {
   .auction_card_dark,
   .auction_card_light {
     width: 100%;
+    padding: 14px 16px;
   }
 
   .time_card_bold {
@@ -2534,6 +2585,12 @@ hr {
   .auction_text_dark,
   .auction_text_light {
     width: 100%;
+    padding: 14px 16px;
+  }
+
+  .auction_card_block {
+    display: grid;
+    gap: 10px;
   }
 
   .bet_button_full {
