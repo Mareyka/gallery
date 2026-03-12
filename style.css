@@ -2538,9 +2538,7 @@ hr {
 
   /*  AUCTION CARD  */
   /* без стрелок  */
-  #slider_image {
-    transition: transform 0.3s ease;
-  }
+
 
   .slider_arrow {
     display: none;

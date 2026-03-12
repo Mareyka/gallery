@@ -237,23 +237,8 @@ if (slider && next && prev) {
   // заглушка — переопределится ниже если телефон
   let updateDots = function () { };
 
-  function goTo(index) {
-    const dir = index > current ? 1 : -1;
-    slider.style.transition = "none";
-    slider.style.transform = `translateX(${-dir * 100}%)`;
-    current = (index + images.length) % images.length;
-    slider.src = images[current];
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        slider.style.transition = "transform 0.3s ease";
-        slider.style.transform = "translateX(0)";
-        updateDots();
-      });
-    });
-  }
-
-  next.onclick = () => goTo(current + 1);
-  prev.onclick = () => goTo(current - 1);
+  next.onclick = () => { current = (current + 1) % images.length; slider.src = images[current]; updateDots(); };
+  prev.onclick = () => { current = (current - 1 + images.length) % images.length; slider.src = images[current]; updateDots(); };
 
   //  Точки и свайп (только на телефоне ≤420px) 
   const photoSlider = document.querySelector('.photo_slider');
@@ -311,8 +296,8 @@ if (slider && next && prev) {
     slider.addEventListener('touchend', (e) => {
       const diff = touchStartX - e.changedTouches[0].clientX;
       if (Math.abs(diff) > 40) {
-        if (diff > 0) goTo(current + 1);
-        else goTo(current - 1);
+        if (diff > 0) next.click();
+        else prev.click();
       }
     }, { passive: true });
   }
