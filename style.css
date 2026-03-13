@@ -1150,7 +1150,7 @@ hr {
 .profile_menu {
   width: 30%;
   border-right: 1px solid #EFEAD3;
-  height: 1200px;
+  height: 1300px;
   display: flex;
   flex-direction: column;
 }
@@ -1158,7 +1158,7 @@ hr {
 .profile_menu_lighttheme {
   width: 30%;
   border-right: 1px solid #111111;
-  height: 1200px;
+  height: 1300px;
   display: flex;
   flex-direction: column;
 }
