@@ -569,5 +569,6 @@ body {
   .dropdown_list_darktheme,
   .dropdown_list_lighttheme {
     width: 100%;
+    z-index: 100;
   }
 }

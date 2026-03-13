@@ -1866,6 +1866,10 @@ hr {
 
   /*  AUCTION  */
 
+  .time_announcement {
+    gap: 25px;
+  }
+
   .header_account {
     display: none;
   }
@@ -1893,6 +1897,11 @@ hr {
 
   /*  AUCTION CARD  */
   /*  AUCTION CARD  */
+
+  .time_auction_card {
+    gap: 15px;
+  }
+
   .auction_card_photo {
     width: 100%;
     height: 340px;
@@ -2513,6 +2522,10 @@ hr {
 
   /*  AUCTION  */
 
+  .time_announcement {
+    gap: 15px;
+  }
+
   .header_account {
     display: none;
   }
@@ -2688,6 +2701,11 @@ hr {
   .profile_list_darktheme,
   .profile_list_lighttheme {
     width: 100%;
+  }
+
+  .profile_list_darktheme,
+  .profile_list_lighttheme {
+    width: 300px;
   }
 
   .new_photo_button_full {
