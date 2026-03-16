@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="light.css">
     <title>Document</title>
 </head>
@@ -28,7 +28,7 @@
                 <img class="header_account" src="../photo/account_dark.svg">
             </a>
             <a href="index.html" class="header_element">Выход</a>
-             <a href="../dark_theme/profile.html">
+            <a href="../dark_theme/profile.html">
                 <img class="header_auction" src="../photo/moon.svg">
             </a>
         </div>
@@ -239,23 +239,19 @@
                 </p>
             </div>
 
-            <div class="content_block schedule_bottom" id="tab5">
+            <div class="content_block" id="tab5">
                 <p class="header_regular_big about_page_br">Редактировать профиль</p>
-                <div class="project_details_container price_stroke_dark registartion_gap schedule_bottom">
-                    <img class="header_account" src="../photo/new_photo_dark.svg">
-                    <p class="header_regular">Имя пользователя</p>
-                    <button class="new_photo_button_full button">
-                        Новое фото
-                    </button>
-                </div>
+
                 <div class="profile_inputs">
+                    <p class="medium profile_minusgap">Имя пользователя</p>
+                    <input type="text" placeholder="Имя пользователя" class="profile_input_lighttheme signature_regular">
                     <p class="medium profile_minusgap">Мобильный телефон или электронный адрес</p>
-                    <input type="text" placeholder="Имя пользователя, номер мобильного телефона, эл. почта"
+                    <input type="text" placeholder="Номер мобильного телефона или электронный адрес"
                         class="profile_input_lighttheme signature_regular">
                     <p class="medium profile_minusgap">Пароль</p>
                     <input type="password" placeholder="Пароль" class="profile_input_lighttheme signature_regular">
                     <p class="medium profile_minusgap">Дата рождения</p>
-                    <div class="registartion_gap">
+                    <div class="registartion_gap schedule_bottom">
                         <div class="dropdown_wrapper">
                             <input placeholder="День" class="profile_input_lighttheme signature_regular" readonly>
                             <div class="profile_list_lighttheme signature_regular" id="days"></div>
@@ -270,6 +266,9 @@
                         </div>
                     </div>
                 </div>
+                <button class="new_photo_button_full button about_page_br">
+                    Подтвердить
+                </button>
             </div>
 
             <div class="content_block" id="tab6">
@@ -313,7 +312,7 @@
     </div>
     <main>
     </main>
-     <script src="../dropdown_list.js"></script>
+    <script src="../dropdown_list.js"></script>
 </body>
 
 </html>
