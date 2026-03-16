@@ -228,9 +228,9 @@ const prev = document.getElementById("prev");
 
 if (slider && next && prev) {
   const images = [
-    "../photo/peace_1.png",
-    "../photo/peace_1_detail1.png",
-    "../photo/peace_1_detail2.png"
+    "../photo/auction_peace_1.avif",
+    "../photo/peace_1_detail_1.avif",
+    "../photo/peace_1 _detail_2.avif"
   ];
   let current = 0;
 
@@ -240,9 +240,9 @@ if (slider && next && prev) {
   next.onclick = () => { current = (current + 1) % images.length; slider.src = images[current]; updateDots(); };
   prev.onclick = () => { current = (current - 1 + images.length) % images.length; slider.src = images[current]; updateDots(); };
 
-  //  Точки и свайп (только на телефоне ≤420px) 
+  //  Точки и свайп
   const photoSlider = document.querySelector('.photo_slider');
-  if (photoSlider && window.innerWidth <= 420) {
+  if (photoSlider) {
 
     const dotsContainer = document.createElement('div');
     dotsContainer.style.cssText = `
@@ -282,7 +282,7 @@ if (slider && next && prev) {
 
     updateDots = function () {
       dots.forEach((d, i) => {
-        d.style.background = i === current ? '#9c9c9c' : '#EFEAD3';
+        d.style.background = i === current ? '#3a3a3a7a' : '#EFEAD3';
       });
     };
 
