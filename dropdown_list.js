@@ -340,3 +340,84 @@ if (headerEl) {
     lastScroll = current;
   });
 }
+
+// Лайтбокс для центральной фотографии проекта
+const projectPhoto = document.querySelector('.project_photo');
+if (projectPhoto) {
+  const centerImg = projectPhoto.querySelector('img:nth-child(2)');
+  if (centerImg) {
+    centerImg.style.cursor = 'zoom-in';
+
+    centerImg.addEventListener('click', () => {
+      const lb = document.createElement('div');
+      lb.style.cssText = `
+        position: fixed; inset: 0;
+        background: rgba(0,0,0,0.92);
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: zoom-out;
+      `;
+
+      const img = document.createElement('img');
+      img.src = centerImg.src;
+      img.style.cssText = `
+        max-width: 95vw;
+        max-height: 95vh;
+        object-fit: contain;
+        border-radius: 8px;
+        touch-action: pinch-zoom;
+      `;
+
+      lb.appendChild(img);
+      document.body.appendChild(lb);
+      document.body.style.overflow = 'hidden';
+
+      lb.addEventListener('click', () => {
+        lb.remove();
+        document.body.style.overflow = '';
+      });
+    });
+  }
+}
+
+// Лайтбокс для слайдера на странице аукциона
+const sliderLink = document.getElementById("slider_link");
+const sliderImage = document.getElementById("slider_image");
+if (sliderLink && sliderImage) {
+  sliderLink.style.cursor = 'zoom-in';
+
+  sliderLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const lb = document.createElement('div');
+    lb.style.cssText = `
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 2000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    `;
+
+    const img = document.createElement('img');
+    img.src = sliderImage.src;
+    img.style.cssText = `
+      max-width: 95vw;
+      max-height: 95vh;
+      object-fit: contain;
+      border-radius: 8px;
+      touch-action: pinch-zoom;
+    `;
+
+    lb.appendChild(img);
+    document.body.appendChild(lb);
+    document.body.style.overflow = 'hidden';
+
+    lb.addEventListener('click', () => {
+      lb.remove();
+      document.body.style.overflow = '';
+    });
+  });
+}
