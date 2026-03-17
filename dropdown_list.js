@@ -341,14 +341,17 @@ if (headerEl) {
   });
 }
 
-// Лайтбокс для центральной фотографии проекта
+// Лайтбокс для фотографии проекта
 const projectPhoto = document.querySelector('.project_photo');
 if (projectPhoto) {
-  const centerImg = projectPhoto.querySelector('img:nth-child(2)');
-  if (centerImg) {
-    centerImg.style.cursor = 'zoom-in';
+  const targetImg = window.innerWidth <= 768
+    ? projectPhoto.querySelector('img:nth-child(1)')
+    : projectPhoto.querySelector('img:nth-child(2)');
 
-    centerImg.addEventListener('click', () => {
+  if (targetImg) {
+    targetImg.style.cursor = 'zoom-in';
+
+    targetImg.addEventListener('click', () => {
       const lb = document.createElement('div');
       lb.style.cssText = `
         position: fixed; inset: 0;
@@ -361,7 +364,7 @@ if (projectPhoto) {
       `;
 
       const img = document.createElement('img');
-      img.src = centerImg.src;
+      img.src = targetImg.src;
       img.style.cssText = `
         max-width: 95vw;
         max-height: 95vh;
