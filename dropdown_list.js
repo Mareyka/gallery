@@ -100,7 +100,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Контейнер нижних ссылок (Вход, Регистрация, Выход)
   const bottomLinks = document.createElement("div");
-  bottomLinks.style.cssText = "border-top: 1px solid rgba(128,128,128,0.2); padding-top: 10px; margin-top: 10px;";
+  bottomLinks.style.cssText = `
+    padding: 10px 0;
+    margin-top: 10px;
+  `;
 
   // Слова которые идут вниз
   const bottomTexts = new Set(["Вход", "Регистрация", "Вход / Регистрация", "Профиль"]);
@@ -114,7 +117,10 @@ document.addEventListener("DOMContentLoaded", function () {
     seen.add(text);
     const clone = link.cloneNode(true);
     clone.className = "side-menu-link";
-    if (bottomTexts.has(text)) {
+   if (bottomTexts.has(text)) {
+      clone.style.background = "transparent";
+      clone.style.display = "inline-block";
+      clone.querySelectorAll("*").forEach(el => el.style.background = "transparent");
       bottomLinks.appendChild(clone);
     } else {
       topLinks.appendChild(clone);
@@ -130,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
       profileLink.className = "side-menu-link side-menu-profile";
       profileLink.href = accountHref;
       profileLink.textContent = "Профиль";
+      profileLink.style.display = "inline-block";
       bottomLinks.appendChild(profileLink);
     }
   }
@@ -138,6 +145,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (exitLink) {
     const exitClone = exitLink.cloneNode(true);
     exitClone.className = "side-menu-link";
+    exitClone.style.background = "transparent";
+    exitClone.style.display = "inline-block";
+    exitClone.querySelectorAll("*").forEach(el => el.style.background = "transparent");
     bottomLinks.appendChild(exitClone);
   }
 
@@ -155,6 +165,21 @@ document.addEventListener("DOMContentLoaded", function () {
     themeLink.appendChild(img);
     themeLink.style.cssText = "position: absolute; top: 24px; right: 28px;";
     sideMenu.appendChild(themeLink);
+  }
+
+  // Показывать нижний блок только если есть ссылки
+  if (bottomLinks.children.length > 0) {
+    bottomLinks.style.cssText += `
+      background: rgba(86,88,246,0.07);
+      border-top: 1px solid rgba(86,88,246,0.25);
+      margin-left: -28px;
+      margin-right: -28px;
+      margin-bottom: -40px;
+      padding-left: 28px;
+      padding-right: 28px;
+      padding-top: 10px;
+      padding-bottom: 40px;
+    `;
   }
 
   document.body.appendChild(sideMenu);
