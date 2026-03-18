@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const topLinks = document.createElement("div");
   topLinks.style.cssText = "flex: 1;";
 
-  // Контейнер нижних ссылок (Вход, Регистрация, Выход)
+  // Контейнер нижних ссылок
   const bottomLinks = document.createElement("div");
   bottomLinks.style.cssText = `
     padding: 10px 0;
@@ -117,9 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
     seen.add(text);
     const clone = link.cloneNode(true);
     clone.className = "side-menu-link";
-   if (bottomTexts.has(text)) {
+    if (bottomTexts.has(text)) {
       clone.style.background = "transparent";
-      clone.style.display = "inline-block";
       clone.querySelectorAll("*").forEach(el => el.style.background = "transparent");
       bottomLinks.appendChild(clone);
     } else {
@@ -127,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Профиль — наверх (только если ещё не добавлен через header_element)
+  // Профиль — вниз (только если ещё не добавлен через header_element)
   const accountImg = header.querySelector("a img.header_account");
   if (accountImg && !seen.has("Профиль")) {
     const accountHref = accountImg.closest("a").getAttribute("href") || "";
@@ -136,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
       profileLink.className = "side-menu-link side-menu-profile";
       profileLink.href = accountHref;
       profileLink.textContent = "Профиль";
-      profileLink.style.display = "inline-block";
       bottomLinks.appendChild(profileLink);
     }
   }
@@ -146,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const exitClone = exitLink.cloneNode(true);
     exitClone.className = "side-menu-link";
     exitClone.style.background = "transparent";
-    exitClone.style.display = "inline-block";
     exitClone.querySelectorAll("*").forEach(el => el.style.background = "transparent");
     bottomLinks.appendChild(exitClone);
   }
@@ -154,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
   sideMenu.appendChild(topLinks);
   sideMenu.appendChild(bottomLinks);
 
-  // Тема — верхний правый угол бокового меню
+  // Тема — верхний левый угол бокового меню
   const themeImg = header.querySelector('a img[src*="sun.svg"], a img[src*="moon.svg"]');
   if (themeImg) {
     const themeLink = document.createElement("a");
@@ -163,9 +160,37 @@ document.addEventListener("DOMContentLoaded", function () {
     img.src = themeImg.getAttribute("src");
     img.style.cssText = "width: 24px; height: 24px;";
     themeLink.appendChild(img);
-    themeLink.style.cssText = "position: absolute; top: 24px; right: 28px;";
+    themeLink.style.cssText = "position: absolute; top: 24px; left: 28px;";
     sideMenu.appendChild(themeLink);
   }
+
+  // Крестик — верхний правый угол бокового меню
+  const isDarkTheme = themeImg && themeImg.getAttribute("src").includes("sun.svg");
+  const spanColor = isDarkTheme ? "#EFEAD3" : "#111111";
+
+  const closeX = document.createElement("button");
+  closeX.style.cssText = `
+    position: absolute; top: 18px; right: 26px;
+    background: none; border: none; cursor: pointer;
+    width: 32px; height: 32px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 0;
+  `;
+  const xSpan1 = document.createElement("span");
+  const xSpan2 = document.createElement("span");
+  [xSpan1, xSpan2].forEach(s => {
+    s.style.cssText = `
+      display: block; width: 20px; height: 2px;
+      border-radius: 2px; background: ${spanColor};
+      position: absolute;
+    `;
+  });
+  xSpan1.style.transform = "rotate(45deg)";
+  xSpan2.style.transform = "rotate(-45deg)";
+  closeX.appendChild(xSpan1);
+  closeX.appendChild(xSpan2);
+  closeX.addEventListener("click", () => closeMenu());
+  sideMenu.appendChild(closeX);
 
   // Показывать нижний блок только если есть ссылки
   if (bottomLinks.children.length > 0) {
@@ -178,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
       padding-left: 28px;
       padding-right: 28px;
       padding-top: 10px;
-      padding-bottom: 50px;
+      padding-bottom: 70px;
     `;
   }
 
@@ -259,7 +284,6 @@ if (slider && next && prev) {
   ];
   let current = 0;
 
-  // заглушка — переопределится ниже если телефон
   let updateDots = function () { };
 
   next.onclick = () => { current = (current + 1) % images.length; slider.src = images[current]; updateDots(); };
