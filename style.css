@@ -6,6 +6,7 @@
 
 body {
   padding: 100px 60px 0 60px;
+  padding-top: calc(100px + env(safe-area-inset-top, 0px)); /* чтобы в ТГ не ехала шапка */
 }
 
 @font-face {
@@ -166,7 +167,7 @@ body {
 .header {
   display: flex;
   position: fixed;
-  top: 0;
+  top: env(safe-area-inset-top, 0px); /* чтобы в ТГ не ехала шапка */
   left: 0;
   right: 0;
   z-index: 1000;
