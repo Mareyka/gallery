@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
       padding-left: 28px;
       padding-right: 28px;
       padding-top: 10px;
-      padding-bottom: 40px;
+      padding-bottom: 50px;
     `;
   }
 
