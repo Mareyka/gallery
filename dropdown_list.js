@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   bottomLinks.style.cssText = "border-top: 1px solid rgba(128,128,128,0.2); padding-top: 10px; margin-top: 10px;";
 
   // Слова которые идут вниз
-  const bottomTexts = new Set(["Вход", "Регистрация", "Вход / Регистрация"]);
+  const bottomTexts = new Set(["Вход", "Регистрация", "Вход / Регистрация", "Профиль"]);
 
   // Все ссылки — сортируем, без дублей
   const seen = new Set();
@@ -121,16 +121,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Профиль — наверх
+  // Профиль — наверх (только если ещё не добавлен через header_element)
   const accountImg = header.querySelector("a img.header_account");
-  if (accountImg) {
+  if (accountImg && !seen.has("Профиль")) {
     const accountHref = accountImg.closest("a").getAttribute("href") || "";
     if (!accountHref.includes("getin")) {
       const profileLink = document.createElement("a");
       profileLink.className = "side-menu-link side-menu-profile";
       profileLink.href = accountHref;
       profileLink.textContent = "Профиль";
-      topLinks.appendChild(profileLink);
+      bottomLinks.appendChild(profileLink);
     }
   }
 
