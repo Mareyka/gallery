@@ -164,33 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
     sideMenu.appendChild(themeLink);
   }
 
-  // Крестик — верхний правый угол бокового меню
-  const isDarkTheme = themeImg && themeImg.getAttribute("src").includes("sun.svg");
-  const spanColor = isDarkTheme ? "#EFEAD3" : "#111111";
-
-  const closeX = document.createElement("button");
-  closeX.style.cssText = `
-    position: absolute; top: 18px; right: 26px;
-    background: none; border: none; cursor: pointer;
-    width: 32px; height: 32px;
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center; gap: 0;
-  `;
-  const xSpan1 = document.createElement("span");
-  const xSpan2 = document.createElement("span");
-  [xSpan1, xSpan2].forEach(s => {
-    s.style.cssText = `
-      display: block; width: 20px; height: 2px;
-      border-radius: 2px; background: ${spanColor};
-      position: absolute;
-    `;
-  });
-  xSpan1.style.transform = "rotate(45deg)";
-  xSpan2.style.transform = "rotate(-45deg)";
-  closeX.appendChild(xSpan1);
-  closeX.appendChild(xSpan2);
-  closeX.addEventListener("click", () => closeMenu());
-  sideMenu.appendChild(closeX);
 
   // Показывать нижний блок только если есть ссылки
   if (bottomLinks.children.length > 0) {
@@ -219,10 +192,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // 4. Логика открытия/закрытия
 
   function openMenu() {
+    const headerHeight = header.offsetHeight;
+    sideMenu.style.top = headerHeight + "px";
+    sideMenu.style.height = "calc(100vh - " + headerHeight + "px)";
     sideMenu.classList.add("open");
     overlay.classList.add("open");
+    overlay.style.top = headerHeight + "px";
     document.body.style.overflow = "hidden";
     burgerBtn.classList.add("active");
+    // шапка принимает цвет меню
+    header.style.backdropFilter = "none";
+    header.style.webkitBackdropFilter = "none";
+    header.style.transition = "background 0.32s ease";
+    const isDark = document.querySelector('a img[src*="sun.svg"]');
+    header.style.background = isDark ? "rgba(17,17,17,1)" : "rgba(239,234,211,1)";
   }
 
   function closeMenu() {
@@ -230,6 +213,10 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.classList.remove("open");
     document.body.style.overflow = "";
     burgerBtn.classList.remove("active");
+    // шапка возвращается к полупрозрачной
+    header.style.background = "";
+    header.style.backdropFilter = "";
+    header.style.webkitBackdropFilter = "";
   }
 
   burgerBtn.addEventListener("click", () => {
