@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (yearsInput && yearsList) {
-    for (let y = 2020; y <= 2030; y++) {
+    for (let y = 2026; y >= 1970; y--) {
       const div = document.createElement("div");
       div.textContent = y;
       div.addEventListener("click", () => { yearsInput.value = y; yearsList.style.display = "none"; });

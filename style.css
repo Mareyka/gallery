@@ -643,7 +643,7 @@ hr {
 }
 
 .registration_button_full {
-  padding: 6px 230px;
+  padding: 6px 238px;
   border-radius: 30px;
   border: 1px solid #5658F6;
   color: #EFEAD3;
@@ -1170,6 +1170,7 @@ hr {
   border-radius: 20px;
   margin-right: 10px;
   display: flex;
+  align-items: center;
 }
 
 .menu_item:hover {
@@ -1182,6 +1183,7 @@ hr {
   border-radius: 20px;
   margin-right: 10px;
   display: flex;
+  align-items: center;
 }
 
 .menu_item_lighttheme:hover {
@@ -1213,7 +1215,7 @@ hr {
   padding-right: 35px;
   border-radius: 15px;
   border: 1px solid #333333;
-  color: #333333;
+  color: #EFEAD3;
   transition: all 0.3s ease;
   background-color: #111111;
   text-align: left;
@@ -1228,10 +1230,39 @@ hr {
 }
 
 .profile_input_darktheme::placeholder {
-  color: #EFEAD3;
+  color: #333333;
 }
 
 .profile_input_darktheme:hover::placeholder {
+  color: #EFEAD3;
+}
+
+
+.profile_dates_input_darktheme {
+  padding: 12px;
+  padding-right: 35px;
+  border-radius: 15px;
+  border: 1px solid #333333;
+  color: #EFEAD3;
+  transition: all 0.3s ease;
+  background-color: #111111;
+  background: url("photo/profile_dates_input_darktheme.svg") no-repeat right 10px center;
+  text-align: left;
+  width: 290px;
+  cursor: pointer;
+  outline: none;
+}
+
+.profile_dates_input_darktheme:hover {
+  border-color: #EFEAD3;
+  color: #EFEAD3;
+}
+
+.profile_dates_input_darktheme::placeholder {
+  color: #333333;
+}
+
+.profile_dates_input_darktheme:hover::placeholder {
   color: #EFEAD3;
 }
 
@@ -1285,12 +1316,42 @@ hr {
 }
 
 .profile_input_lighttheme::placeholder {
-  color: #111111;
+  color: #9c9c9c;
 }
 
 .profile_input_lighttheme:hover::placeholder {
   color: #111111;
 }
+
+
+.profile_dates_input_lighttheme {
+  padding: 12px;
+  padding-right: 35px;
+  border-radius: 15px;
+  border: 1px solid #9c9c9c;
+  color: #111111;
+  transition: all 0.3s ease;
+  background-color: none;
+  background: url("photo/profile_dates_input_lighttheme.svg") no-repeat right 10px center;
+  text-align: left;
+  width: 290px;
+  cursor: pointer;
+  outline: none;
+}
+
+.profile_dates_input_lighttheme:hover {
+  border-color: #111111;
+  color: #111111;
+}
+
+.profile_dates_input_lighttheme::placeholder {
+  color: #9c9c9c;
+}
+
+.profile_dates_input_lighttheme:hover::placeholder {
+  color: #111111;
+}
+
 
 .profile_list_lighttheme {
   position: absolute;
@@ -2015,7 +2076,9 @@ hr {
   }
 
   .profile_input_darktheme,
-  .profile_input_lighttheme {
+  .profile_input_lighttheme,
+  .profile_dates_input_darktheme,
+  .profile_dates_input_lighttheme {
     width: 100%;
   }
 
@@ -2694,7 +2757,9 @@ hr {
   }
 
   .profile_input_darktheme,
-  .profile_input_lighttheme {
+  .profile_input_lighttheme, 
+  .profile_dates_input_darktheme,
+  .profile_dates_input_lighttheme {
     width: 100%;
   }
 
