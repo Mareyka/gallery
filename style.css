@@ -269,6 +269,12 @@ body {
   align-items: center;
 }
 
+.block_text_with_arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .block2_about {
   margin-top: 50px;
   width: 629px;
@@ -1678,7 +1684,8 @@ hr {
   }
 
   .block2_2 img,
-  .block3_3_dates img {
+  .block3_3_dates img,
+  .block_text_with_arrow img {
     width: 40px;
     height: 40px;
   }
@@ -2301,7 +2308,8 @@ hr {
   }
 
   .block2_2 img,
-  .block3_3_dates img {
+  .block3_3_dates img,
+  .block_text_with_arrow img {
     width: 26px;
     height: 26px;
   }
