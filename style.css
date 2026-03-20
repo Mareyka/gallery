@@ -356,6 +356,12 @@ hr {
   /*если стрелка сьезжает то больше ширину надо*/
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+}
+
+.block3_3_dates a {
+  display: flex;
+  align-items: center;
 }
 
 .block4_photo {
@@ -2745,7 +2751,7 @@ hr {
   }
 
   .profile_input_darktheme,
-  .profile_input_lighttheme, 
+  .profile_input_lighttheme,
   .profile_dates_input_darktheme,
   .profile_dates_input_lighttheme {
     width: 100%;
