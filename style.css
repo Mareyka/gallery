@@ -176,6 +176,7 @@ body {
 
 .flex {
   display: flex;
+  align-items: center;
 }
 
 .header_element {
