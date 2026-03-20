@@ -347,14 +347,12 @@ hr {
 
 .block3_dates {
   display: flex;
-  width: 209px;
   justify-content: space-between;
   gap: 15px;
 }
 
 .block3_3_dates {
   display: flex;
-  width: 190px;
   /*если стрелка сьезжает то больше ширину надо*/
   justify-content: space-between;
   align-items: center;
@@ -1662,12 +1660,7 @@ hr {
   }
 
   .block3_dates {
-    width: 180px;
     margin-top: 10px;
-  }
-
-  .block3_3_dates {
-    width: 200px;
   }
 
   .block3:has(.block4) {
@@ -2296,13 +2289,8 @@ hr {
   }
 
   .block3_dates {
-    width: 200px;
     gap: 20px;
     margin-top: 5px;
-  }
-
-  .block3_3_dates {
-    width: 160px;
   }
 
   .block2_2 img,
