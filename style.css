@@ -348,7 +348,7 @@ hr {
 .block3_dates {
   display: flex;
   justify-content: space-between;
-  gap: 15px;
+  gap: 25px;
 }
 
 .block3_3_dates {
